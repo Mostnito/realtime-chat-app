@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import {io} from 'socket.io-client';
 const socket = io('http://localhost:3000');
+import './App.css';
 
 function App(){
   
@@ -102,13 +103,13 @@ function App(){
       <h1>Chat Application</h1>
       <div className="card">
           <div className="card-header">
-            {username}
+            <h2>Welcome to the Chat</h2>
           </div>
 
           <div className="card-body">
                <div className="input-group">
-                <label>ชื่อของคุณ</label>
-                <input onChange={(e)=>{setPrepare(e.target.value)}} type="text" placeholder="yourname"/>
+                <label>ชื่อของคุณ {username}</label>
+                <input onChange={(e)=>{setPrepare(e.target.value)}} type="text" placeholder="ชื่อของคุณ"/>
                 <button onClick={(e)=>{setUsernamefunc(e)}}>ยืนยัน</button>
                </div>
           </div>
